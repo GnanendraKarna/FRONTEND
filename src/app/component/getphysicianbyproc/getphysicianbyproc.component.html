@@ -1,0 +1,25 @@
+<div>
+    <h2>Physicians by Procedure</h2>
+  
+    <div>
+      <label for="searchProcedureId">Enter Procedure ID:</label>
+      <input type="number" id="searchProcedureId" name="searchProcedureId" [(ngModel)]="searchProcedureId" required>
+      <button (click)="searchByProcedure()">Search</button>
+    </div>
+  
+    <table *ngIf="physicians && physicians.length > 0">
+      <thead>
+        <tr>
+          <th>Physician ID</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let physician of physicians">
+          <td>{{ physician.employeeid }}</td>
+      
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

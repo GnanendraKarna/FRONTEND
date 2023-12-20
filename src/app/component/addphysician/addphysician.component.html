@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <form (ngSubmit)="savePhysician()" #physicianForm="ngForm">
+    <label>Employee ID:</label>
+    <input [(ngModel)]="physician.employeeid" name="employeeid" type="number" required />
+
+    <label>Name:</label>
+    <input [(ngModel)]="physician.name" name="name" type="text" required />
+
+    <label>Position:</label>
+    <input [(ngModel)]="physician.position" name="position" type="text" required />
+
+    <label>SSN:</label>
+    <input [(ngModel)]="physician.ssn" name="ssn" type="number" required />
+
+    <button type="submit" [disabled]="physicianForm.invalid">Save</button>
+  </form>
+
+</body>
+</html>

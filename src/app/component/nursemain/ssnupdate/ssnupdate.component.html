@@ -1,0 +1,15 @@
+<!-- ssnupdate.component.html -->
+<div>
+    <label for="empId">Employee ID:</label>
+    <input type="text" [(ngModel)]="empId" id="empId" />
+    <button (click)="searchNurse()">Search</button>
+  </div>
+  
+  <div *ngIf="updatedNurse">
+    <h2>Nurse Details:</h2>
+    <p>ID: {{ updatedNurse.id }}</p>
+    <p>Name: {{ updatedNurse.name }}</p>
+    <p>SSN: <input type="text" [(ngModel)]="updatedNurse.ssn" /></p>
+    <button (click)="updateSsn()">Update SSN</button>
+  </div>
+  

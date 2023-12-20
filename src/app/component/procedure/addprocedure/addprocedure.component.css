@@ -1,0 +1,53 @@
+
+
+.add-treatment-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-treatment-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .add-treatment-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .add-treatment-container button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .add-treatment-container button:hover {
+    background-color: #45a049;
+  }
+  
+  .added-treatment {
+    margin-top: 20px;
+  }
+  
+  .added-treatment h2 {
+    color: #4caf50;
+  }
+  
+  .added-treatment p {
+    margin: 5px 0;
+  }
+  

@@ -1,0 +1,19 @@
+<table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Cost</th>
+        <!-- Add additional columns as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let procedure of procedures">
+        <td>{{ procedure.code }}</td>
+        <td>{{ procedure.name }}</td>
+        <td>{{ procedure.cost }}</td>
+        <!-- Display additional columns as needed -->
+      </tr>
+    </tbody>
+  </table>
+  

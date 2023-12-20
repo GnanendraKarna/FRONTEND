@@ -1,0 +1,30 @@
+<div>
+    <h2>Add Certification</h2>
+  
+    <form #certificateForm="ngForm" (ngSubmit)="addCertificate()">
+      <div>
+        <label for="physician">Physician ID:</label>
+        <input type="number" id="physician" name="physician" [(ngModel)]="certificate.physician" required>
+      </div>
+  
+      <div>
+        <label for="treatment">Treatment Code:</label>
+        <input type="number" id="treatment" name="treatment" [(ngModel)]="certificate.treatment" required>
+      </div>
+  
+      <div>
+        <label for="certificationdate">Certification Date:</label>
+        <input type="date" id="certificationdate" name="certificationdate" [(ngModel)]="certificate.certificationdate" required>
+      </div>
+  
+      <div>
+        <label for="certificationexpires">Certification Expires:</label>
+        <input type="date" id="certificationexpires" name="certificationexpires" [(ngModel)]="certificate.certificationexpires" required>
+      </div>
+  
+      <div>
+        <button type="submit" [disabled]="!certificateForm.valid">Add Certification</button>
+      </div>
+    </form>
+  </div>
+  

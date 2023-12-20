@@ -1,0 +1,29 @@
+
+
+<h1>All Patients</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>SSN</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Insurance ID</th>
+      <th>PCP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let patient of patients">
+      <td>{{ patient.ssn }}</td>
+      <td>{{ patient.name }}</td>
+      <td>{{ patient.address }}</td>
+      <td>{{ patient.phone }}</td>
+      <td>{{ patient.insuranceid }}</td>
+      <td>{{ patient.pcp }}</td>
+    </tr>
+  </tbody>
+</table>
+
+  
+  <hr />

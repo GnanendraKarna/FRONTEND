@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('../../../assets/img/departments-3.jpg'); 
+        background-size: cover;
+        background-position: center;
+      }
+  
+      .link-container {
+        text-align: center;
+        color: #000000;
+      }
+  
+      .link-container a {
+        display: block;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #007bff; 
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+      }
+  
+      .link-container a:hover {
+        background-color: #0056b3; 
+      }
+    </style>
+</head>
+
+<body>
+
+  <div class="link-container">
+    <div class="nav-links-container">
+        <a routerLink="/treatment">TreatmentdoneByPhysician</a>
+        <a routerLink="/addcertificate">AddCertificate</a>
+        <a routerLink="/getphybyproc">GetPhysician By Procedure</a>
+        <a routerLink="/getprocbycertificate">GetAll Physician with Certification</a>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

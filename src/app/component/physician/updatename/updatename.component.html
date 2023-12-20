@@ -1,0 +1,17 @@
+
+
+<div class="update-name-container">
+  <label for="empId">Employee ID:</label>
+  <input type="text" [(ngModel)]="employeeid" id="empId" />
+
+  <label for="name">New Name:</label>
+  <input type="text" [(ngModel)]="updatedPhysician.name" id="name" class="form-control" name="first" />
+
+  <button (click)="updateName()">Update Name</button>
+
+  <div *ngIf="updatedPhysician.name" class="updated-details">
+    <h2>Updated Physician Details:</h2>
+    <p>Physician Name: {{ updatedPhysician.name }}</p>
+
+  </div>
+</div>

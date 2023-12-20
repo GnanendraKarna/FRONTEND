@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-...................." crossorigin="anonymous" />
+  <title>Hospital Management System - Login</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .fullscreen-image {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="fullscreen-image" style="background-image: url('../../../assets/img/signup1.jpg');">
+    <div class="container h-100">
+      <div class="row align-items-center justify-content-center h-100">
+        <div class="col-md-6">
+          <div class="login-container text-center">
+            <!-- Content Goes Here -->
+            <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+              <!-- First Name Input -->
+              <div class="mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" id="firstname" class="form-control" name="firstname" [(ngModel)]="user.firstname"
+                  required pattern="[a-zA-Z ]*" />
+                <div *ngIf="signUpForm.controls['firstname']?.touched && signUpForm.controls['firstname']?.errors?.['required']"
+                  class="text-danger">First Name is required.</div>
+                <div
+                  *ngIf="signUpForm.controls['firstname']?.touched && signUpForm.controls['firstname']?.errors?.['pattern']"
+                  class="text-danger">Enter a valid name (only letters).</div>
+              </div>
+
+              <!-- Last Name Input -->
+              <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" id="lastname" class="form-control" name="lastname" [(ngModel)]="user.lastname"
+                  required pattern="[a-zA-Z ]*" />
+                <div *ngIf="signUpForm.controls['lastname']?.touched && signUpForm.controls['lastname']?.errors?.['required']"
+                  class="text-danger">Last Name is required.</div>
+                <div
+                  *ngIf="signUpForm.controls['lastname']?.touched && signUpForm.controls['lastname']?.errors?.['pattern']"
+                  class="text-danger">Enter a valid name (only letters).</div>
+              </div>
+
+              <!-- Email Input -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" name="email" [(ngModel)]="user.email" required email />
+                <div *ngIf="signUpForm.controls['email']?.touched && signUpForm.controls['email']?.errors?.['required']"
+                  class="text-danger">Email is required.</div>
+                <div
+                  *ngIf="signUpForm.controls['email']?.touched && signUpForm.controls['email']?.errors?.['email']"
+                  class="text-danger">Enter a valid email.</div>
+              </div>
+
+              <!-- Password Input -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" name="password" [(ngModel)]="user.password"
+                  required minlength="8" />
+                <div *ngIf="signUpForm.controls['password']?.touched && signUpForm.controls['password']?.errors?.['required']"
+                  class="text-danger">Password is required.</div>
+                <div
+                  *ngIf="signUpForm.controls['password']?.touched && signUpForm.controls['password']?.errors?.['minlength']"
+                  class="text-danger">Password should be at least 8 characters long.</div>
+              </div>
+
+              <!-- Confirm Password Input -->
+              <div class="mb-3">
+                <label for="repeatPassword" class="form-label">Confirm Password</label>
+                <input type="password" id="repeatPassword" class="form-control" name="repeatPassword"
+                  [(ngModel)]="user.repeatPassword" required minlength="8" />
+                <div
+                  *ngIf="signUpForm.controls['repeatPassword']?.touched && signUpForm.controls['repeatPassword']?.errors?.['required']"
+                  class="text-danger">Confirm Password is required.</div>
+                <div
+                  *ngIf="signUpForm.controls['repeatPassword']?.touched && signUpForm.controls['repeatPassword']?.errors?.['minlength']"
+                  class="text-danger">Password should be at least 8 characters long.</div>
+              </div>
+
+              <!-- Role Selection -->
+              <div class="mb-3">
+                <label class="form-label">Select Role</label>
+                <div class="btn-group d-flex justify-content-between" role="group">
+                  <input type="radio" id="adminRole" class="btn-check" name="role" value="admin" [(ngModel)]="user.role"
+                    required>
+                  <label class="btn btn-outline-primary" for="adminRole">Admin</label>
+
+                  <input type="radio" id="customerRole" class="btn-check" name="role" value="customer"
+                    [(ngModel)]="user.role" required>
+                  <label class="btn btn-outline-primary" for="customerRole">Physician</label>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

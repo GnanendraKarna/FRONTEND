@@ -1,0 +1,14 @@
+<div>
+    <h2>Physician Details</h2>
+    <div>
+      <label for="appointmentId">Enter Appointment ID:</label>
+      <input type="number" id="appointmentId" name="appointmentId" [(ngModel)]="appointmentId" required>
+      <button (click)="getPhysicianByAppointmentId()">Search</button>
+    </div>
+  
+    <div *ngIf="physician">
+      <p><strong>Name:</strong> {{ physician.name }}</p>
+      <!-- Add other physician details based on the Physician model -->
+    </div>
+  </div>
+  

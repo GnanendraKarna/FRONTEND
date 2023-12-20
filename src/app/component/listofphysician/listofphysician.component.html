@@ -1,0 +1,29 @@
+
+
+<h2>List Physicians by Position</h2>
+
+<label for="position">Position:</label>
+<input [(ngModel)]="position" name="position" type="text" />
+
+<button (click)="fetchPhysiciansByPosition()">Fetch Physicians</button>
+
+<table *ngIf="physicians.length > 0">
+  <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>SSN</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let physician of physicians">
+      <td>{{ physician.employeeid }}</td>
+      <td>{{ physician.name }}</td>
+      <td>{{ physician.position }}</td>
+      <td>{{ physician.ssn }}</td>
+
+    </tr>
+  </tbody>
+</table>

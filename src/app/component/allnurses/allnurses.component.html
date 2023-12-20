@@ -1,0 +1,34 @@
+<!-- src/app/nurse-list/nurse-list.component.html -->
+
+<div class="container mt-5">
+  <div class="text-center">
+    <h2 class="display-4 font-weight-bold mb-4 text-primary">Nurse Directory</h2>
+  </div>
+
+  <div *ngIf="nurses.length > 0" class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Employee ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Position</th>
+          <th scope="col">Registered</th>
+          <th scope="col">SSN</th>
+          <!-- Add other properties as needed -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let nurse of nurses; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ nurse.employeeid }}</td>
+          <td>{{ nurse.name }}</td>
+          <td>{{ nurse.position }}</td>
+          <td>{{ nurse.registered }}</td>
+          <td>{{ nurse.ssn }}</td>
+          <!-- Add other properties as needed -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

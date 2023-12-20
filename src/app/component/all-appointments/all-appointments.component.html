@@ -1,0 +1,29 @@
+
+<!-- appointment-list.component.html -->
+
+<h2>Appointment List</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Appointment ID</th>
+      <th>Patient ID</th>
+      <th>Prep Nurse ID</th>
+      <th>Physician ID</th>
+      <th>Start Date and Time</th>
+      <th>End Date and Time</th>
+      <th>Examination Room</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appointment of appointments">
+      <td>{{ appointment.appointmentid }}</td>
+      <td>{{ appointment.patient }}</td>
+      <td>{{ appointment.prepnurse }}</td>
+      <td>{{ appointment.physician }}</td>
+      <td>{{ appointment.startDateTime }}</td>
+      <td>{{ appointment.endDateTime }}</td>
+      <td>{{ appointment.examinationroom }}</td>
+    </tr>
+  </tbody>
+</table>

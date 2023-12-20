@@ -1,0 +1,42 @@
+<form #appointmentForm="ngForm" (ngSubmit)="addAppointment(appointmentForm)">
+    <div>
+      <label for="appointmentid">Appointment ID:</label>
+      <input type="number" id="appointmentid" name="appointmentid" [(ngModel)]="appointment.appointmentid">
+    </div>
+
+    <div>
+      <label for="patient">Patient ID:</label>
+      <input type="number" id="patient" name="patient" [(ngModel)]="appointment.patient">
+    </div>
+  
+    <div>
+      <label for="prepnurse">Prep Nurse ID:</label>
+      <input type="number" id="prepnurse" name="prepnurse" [(ngModel)]="appointment.prepnurse">
+    </div>
+  
+    <div>
+      <label for="physician">Physician ID:</label>
+      <input type="number" id="physician" name="physician" [(ngModel)]="appointment.physician">
+    </div>
+  
+    <div>
+      <label for="startDateTime">Start Date and Time:</label>
+      <input type="datetime-local" id="startDateTime" name="startDateTime" [(ngModel)]="appointment.startDateTime">
+    </div>
+  
+    <div>
+      <label for="endDateTime">End Date and Time:</label>
+      <input type="datetime-local" id="endDateTime" name="endDateTime" [(ngModel)]="appointment.endDateTime">
+    </div>
+  
+    <div>
+      <label for="examinationroom">Examination Room:</label>
+      <input type="text" id="examinationroom" name="examinationroom" [(ngModel)]="appointment.examinationroom">
+    </div>
+    
+    <button type="submit">Add Appointment</button>
+  
+    <div *ngIf="errorMessage" class="text-danger mt-2">
+      {{ errorMessage }}
+    </div>
+</form>

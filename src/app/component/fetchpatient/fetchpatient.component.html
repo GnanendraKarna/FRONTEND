@@ -1,0 +1,98 @@
+<!-- src/app/patient.component.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Patients</title>
+  <style>
+  
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #007bff;
+    }
+
+    /* Search form styles */
+    div.search-form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    input[type="number"] {
+      width: 100px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 12px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Patient table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>All Patients</h1>
+
+  <!-- Search by PCP Form -->
+  <div class="search-form">
+    <label>Search Patients by PCP:</label>
+    <input [(ngModel)]="pcpToSearch" type="number" />
+    <button (click)="getPatientsByPcp()">Search</button>
+  </div>
+
+  <!-- Patient Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>SSN</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Insurance ID</th>
+        <th>PCP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of patients">
+        <td>{{ patient.ssn }}</td>
+        <td>{{ patient.name }}</td>
+        <td>{{ patient.address }}</td>
+        <td>{{ patient.phone }}</td>
+        <td>{{ patient.insuranceid }}</td>
+        <td>{{ patient.pcp }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+</html>

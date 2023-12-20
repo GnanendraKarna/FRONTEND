@@ -1,0 +1,25 @@
+
+<h2>Physicians</h2>
+
+<div>
+  <label for="deptId">Search by Department ID: </label>
+  <input type="number" id="deptId" [(ngModel)]="searchDeptId">
+  <button (click)="searchByDepartment()">Search</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let physician of physicians">
+      <td>{{ physician.employeeid }}</td>
+      <td>{{ physician.name }}</td>
+
+    </tr>
+  </tbody>
+</table>

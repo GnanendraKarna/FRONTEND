@@ -1,0 +1,21 @@
+
+
+<div class="add-treatment-container">
+  <label for="code">Code:</label>
+  <input type="number" id="code" [(ngModel)]="procedure.code" />
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" [(ngModel)]="procedure.name" />
+
+  <label for="cost">Cost:</label>
+  <input type="number" id="cost" [(ngModel)]="procedure.cost" />
+
+  <button (click)="addTreatment()">Add Treatment</button>
+</div>
+
+<div *ngIf="procedure.code !== 0 || procedure.name || procedure.cost !== 0" class="added-treatment">
+  <h2>Added Treatment</h2>
+  <p><strong>Code:</strong> {{ procedure.code }}</p>
+  <p><strong>Name:</strong> {{ procedure.name }}</p>
+  <p><strong>Cost:</strong> {{ procedure.cost }}</p>
+</div>

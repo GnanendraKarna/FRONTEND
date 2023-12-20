@@ -1,0 +1,29 @@
+/* Add this to your styles.css or styles.scss file */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../../assets/img/about-bg.jpg') center/cover no-repeat;
+  }
+  
+  a {
+    display: block;
+    padding: 15px 30px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 123, 255, 0.8);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  a:hover {
+    background-color: rgba(0, 123, 255, 1);
+  }
+  

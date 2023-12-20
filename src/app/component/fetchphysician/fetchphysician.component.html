@@ -1,0 +1,20 @@
+
+
+<div class="physician-container">
+  <h2>Fetch Physician by Name</h2>
+
+  <div class="form-container">
+    <label for="physicianName">Physician Name:</label>
+    <input [(ngModel)]="physicianName" name="physicianName" type="text" />
+
+    <button (click)="fetchPhysicianByName()">Fetch Physician</button>
+  </div>
+
+  <div *ngIf="physician" class="result-container">
+    <h3>Physician Details</h3>
+    <p>Name: {{ physician.name }}</p>
+    <p>Position: {{ physician.position }}</p>
+    <p>SSN: {{ physician.ssn }}</p>
+
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div>
+  <h2>Get Patient by Appointment ID</h2>
+  <div>
+    <label for="appointmentId">Enter Appointment ID:</label>
+    <input type="number" id="appointmentId" name="appointmentId" [(ngModel)]="appointmentId" required>
+    <button (click)="getPatientByAppointmentId()">Search</button>
+  </div>
+
+  <div *ngIf="patient">
+    <h3>Patient Details</h3>
+    <p><strong>Name:</strong> {{ patient.name }}</p>
+    <p><strong>SSN:</strong> {{ patient.ssn }}</p>
+    <p><strong>Address:</strong> {{ patient.address }}</p>
+    <p><strong>Phone:</strong> {{ patient.phone }}</p>
+    <p><strong>Insurance ID:</strong> {{ patient.insuranceid }}</p>
+    <p><strong>PCP:</strong> {{ patient.pcp }}</p>
+
+  </div>
+</div>
+
+
+  

@@ -1,0 +1,19 @@
+
+
+<div class="physician-container">
+  <h2>Get Physician By ID</h2>
+
+  <div class="search-form">
+    <label for="empid">Enter Physician ID:</label>
+    <input type="number" id="empid" name="empid" [(ngModel)]="empid" required>
+    <button (click)="getPhysician()">Search</button>
+  </div>
+
+  <div *ngIf="physician" class="physician-details">
+    <p>Employee ID: {{ physician.employeeid }}</p>
+    <p>Name: {{ physician.name }}</p>
+
+  </div>
+
+
+</div>

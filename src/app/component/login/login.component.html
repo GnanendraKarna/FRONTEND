@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-...................." crossorigin="anonymous" />
+  <title>Hospital Management System - Login</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .fullscreen-image {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="fullscreen-image" style="background-image: url('../../../assets/img/login.jpg');">
+    <div class="container h-100">
+      <div class="row align-items-center justify-content-center h-100">
+        <div class="col-md-6">
+          <div class="login-container text-center">
+            <!-- Content Goes Here -->
+            <form #loginForm="ngForm" (ngSubmit)="loginUser()">
+              <h2 class="mb-4">Hospital Management System</h2>
+              <div class="form-group">
+                <label for="email" class="text-dark">Hospital Email</label>
+                <input type="email" id="email" class="form-control" name="email" [(ngModel)]="user.email" required
+                  email />
+                <div *ngIf="loginForm.controls['email']?.touched && loginForm.controls['email']?.errors?.['required']"
+                  class="text-danger">Email is required.</div>
+                <div *ngIf="loginForm.controls['email']?.touched && loginForm.controls['email']?.errors?.['email']"
+                  class="text-danger">Enter a valid email.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="text-dark">Password</label>
+                <input type="password" id="password" class="form-control" [(ngModel)]="user.password" name="password"
+                  required autocomplete="off" />
+                <div *ngIf="loginForm.controls['password']?.touched && loginForm.controls['password']?.errors?.['required']"
+                  class="text-danger">Password is required.</div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Login</button>
+              <p class="small mt-3">Don't have a hospital account? <a routerLink="/register" class="link-danger">Register</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

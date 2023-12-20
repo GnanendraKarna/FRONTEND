@@ -1,0 +1,21 @@
+<h2>Procedure Certificates</h2>
+
+<table *ngIf="certificates && certificates.length > 0">
+  <thead>
+    <tr>
+      <th>Physician ID</th>
+      <th>Treatment Code</th>
+      <th>Certification Date</th>
+      <th>Certification Expires</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let certificate of certificates">
+      <td>{{ certificate.physician }}</td>
+      <td>{{ certificate.treatment }}</td>
+      <td>{{ certificate.certificationdate | date: 'yyyy-MM-dd' }}</td>
+      <td>{{ certificate.certificationexpires | date: 'yyyy-MM-dd' }}</td>
+    </tr>
+  </tbody>
+</table>

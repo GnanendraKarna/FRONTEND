@@ -1,0 +1,16 @@
+<!-- Your HTML code for the Procedure Search -->
+
+<div class="procedure-search-container">
+  <label for="searchId">Enter Procedure ID:</label>
+  <input type="number" id="searchId" [(ngModel)]="searchId" />
+  
+  <button (click)="searchProcedureCost()">Search</button>
+</div>
+
+<div *ngIf="procedure !== undefined" class="procedure-info">
+  <h2>Procedure Information</h2>
+  <p><strong>Code:</strong> {{ procedure.code }}</p>
+  <p><strong>Name:</strong> {{ procedure.name }}</p>
+  <p><strong>Cost:</strong> {{ procedure.cost }}</p>
+  <!-- Display additional information as needed -->
+</div>

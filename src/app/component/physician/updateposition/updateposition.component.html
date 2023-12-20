@@ -1,0 +1,17 @@
+
+
+<div class="update-position-container">
+  <label for="empId">Employee ID:</label>
+  <input type="text" [(ngModel)]="empId" id="empId" />
+
+  <label for="position">New Position:</label>
+  <input type="text" [(ngModel)]="updatedPhysician.position" id="position" class="form-control" name="position" />
+
+  <button (click)="updatePosition()">Update Position</button>
+
+  <div *ngIf="updatedPhysician.position" class="updated-details">
+    <h2>Updated Physician Details:</h2>
+    <p>Position: {{ updatedPhysician.position }}</p>
+
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<!-- affiliation-form.component.html -->
+
+<form #affiliationForm="ngForm" (ngSubmit)="addAffiliation()">
+    <div class="form-group">
+      <label for="physician">Physician ID:</label>
+      <input type="number" id="physician" name="physician" [(ngModel)]="affiliation.physician" required>
+    </div>
+    <div class="form-group">
+      <label for="department">Department ID:</label>
+      <input type="number" id="department" name="department" [(ngModel)]="affiliation.department" required>
+    </div>
+    <div class="form-group">
+      <label for="primaryAffiliation">Primary Affiliation:</label>
+      <input type="checkbox" id="primaryAffiliation" name="primaryAffiliation" [(ngModel)]="affiliation.primaryaffiliation">
+    </div>
+    <button type="submit" [disabled]="!affiliationForm.valid">Add Affiliation</button>
+  </form>
+  

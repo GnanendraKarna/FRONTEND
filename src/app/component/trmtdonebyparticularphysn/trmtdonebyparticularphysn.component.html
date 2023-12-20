@@ -1,0 +1,24 @@
+<!-- treatment-by-physician.component.html -->
+
+<h2>Treatment By Physician</h2>
+
+<div>
+  <label for="physicianId">Enter Physician ID:</label>
+  <input type="number" id="physicianId" name="physicianId" [(ngModel)]="searchPhysicianId" required>
+  <button (click)="searchByPhysician()">Search</button>
+</div>
+
+<table *ngIf="procedures && procedures.length > 0">
+  <thead>
+    <tr>
+      <th>Treatment Code</th>
+      <!-- Add other header columns if needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let procedure of procedures">
+      <td>{{ procedure.code }}</td>
+      <!-- Add other columns based on the Procedure model -->
+    </tr>
+  </tbody>
+</table>
